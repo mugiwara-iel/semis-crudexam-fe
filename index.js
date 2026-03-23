@@ -59,27 +59,48 @@ function getUsers(){
 }
 
 //DELETE 
-function deleteMember(id){
+// function deleteMember(id){
 
-    let text;
-    if(confirm("Press a button!")==true){
-        fetch("https://semis-crudexam.onrender.com/api/users",{
-        method:'DELETE',
-        body: JSON.stringify({id}),
-        headers:{
-            "Content-Type":"application/json",
-        },
-    }).then(response=>response.text())
-    .then(response=>console.log("response"))
-    .catch(error=>{
-        console.log(error);
-    })
+//     let text;
+//     if(confirm("Press a button!")==true){
+//         fetch("https://semis-crudexam.onrender.com/api/users",{
+//         method:'DELETE',
+//         body: JSON.stringify({id}),
+//         headers:{
+//             "Content-Type":"application/json",
+//         },
+//     }).then(response=>response.text())
+//     .then(response=>console.log("response"))
+//     .catch(error=>{
+//         console.log(error);
+//     })
 
-        location.reload();
-}
+//         location.reload();
+// }
 
-    else{text="You canceled!";}
+//     else{text="You canceled!";}
     
+// }
+function deleteMember(id) {
+  if (confirm("Are you sure you want to delete this?")) {
+    fetch("https://semis-crudexam.onrender.com/api/users", {
+      method: "DELETE",
+      body: JSON.stringify({ id }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.text())
+      .then((response) => {
+        console.log(response);
+        location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  } else {
+    alert("You Canceled!");
+  }
 }
 
 //SEARCH
