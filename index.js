@@ -106,7 +106,7 @@ update.addEventListener('click',()=>{
 
     let formData={name,university,role,department,id};
 
-    fetch("https://semis-crudexam.onrender.com/api/users",{
+    fetch("https://semis-crudexam.onrender.com/api/users/",{
         method:'PUT',
         body: JSON.stringify(formData),
         headers:{
