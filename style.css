@@ -1,0 +1,120 @@
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background: #e5efff;
+    margin: 0;
+    padding: 2rem;
+    height:100vh;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    color: #010042;
+    margin-top: 0;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    width: 100%;
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #010042;
+}
+
+input, select {
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+button {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    margin-left: 6px;
+    margin-top: 30px;
+    padding: 0.7rem;
+    background: #010042;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+button:hover {
+    background: #010042;
+}
+
+#content {
+    margin-top: 2rem;
+    list-style: none;
+    padding: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content li {
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 80%;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #010042;
+    color: white;
+}
+
+.actions {
+    flex-direction: column;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#edit-btn   { background: #00003a; color: white; }
+#delete-btn { background: #5e0000; color: white; 
+    margin-top: 2px;
+    display:block;
+    align-items: center;
+    display: flex;
+}
+
+.edit-btn:hover   { background: rgb(1, 62, 128); }
+.delete-btn:hover { background: #9e0101; }

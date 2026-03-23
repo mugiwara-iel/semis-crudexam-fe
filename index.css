@@ -1,0 +1,243 @@
+body {
+  background: rgb(254, 243, 243) !important;
+}
+:root {
+  --maroon:        #7a1d3e;
+  --maroon-dark:   #5c142e;
+  --maroon-light:  #a13e5e;
+  --bg-start:      #f9f9fb;
+  --bg-end:        #f2f2f5;
+  --card-bg:       rgba(255, 255, 255, 0.92);
+  --card-border:   rgba(210, 210, 215, 0.6);
+  --text:          #1d1d1f;
+  --text-muted:    #6e6e73;
+  --border:        #d2d2d7;
+  --shadow-sm:     0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md:     0 10px 30px rgba(0,0,0,0.10);
+  --radius:        18px;
+  --radius-sm:     12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 40px 20px;
+  line-height: 1.45;
+}
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--maroon);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+h1 + h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 48px;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
+}
+
+/* Panels – clean white with subtle shadow, light glass feel */
+.form-panel,
+.table-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(8px);            /* gentle blur */
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.form-panel {
+  padding: 32px;
+  height: fit-content;
+  position: sticky;
+  top: 40px;
+}
+
+.form-panel h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--maroon);
+  margin-bottom: 28px;
+}
+
+.table-panel {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Form styling */
+label {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--maroon);
+  box-shadow: 0 0 0 4px rgba(122, 29, 62, 0.12);
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+button {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 4px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#add {
+  background: var(--maroon);
+  color: white;
+}
+
+#add:hover {
+  background: var(--maroon-dark);
+  transform: translateY(-1px);
+}
+
+#update {
+  background: #f5f5f7;
+  color: var(--text);
+}
+
+#update:hover {
+  background: #e8e8ed;
+  transform: translateY(-1px);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  padding: 16px 20px;
+  font-size: 0.98rem;
+}
+
+th {
+  background: linear-gradient(90deg, var(--maroon), var(--maroon-light) 80%, var(--maroon-dark));
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  /* Ensures gradient spans full width without column cuts */
+  background-size: 200% 100%;
+  background-position: left;
+   text-align: center;
+}
+
+tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.18s ease;
+}
+
+tr:hover {
+  background: rgba(122, 29, 62, 0.04);
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+/* Actions */
+td.actions {
+  padding: 12px 20px !important;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  padding: 6px 14px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 80px;
+  border: none;
+}
+
+.actions .btn-edit {
+  background: rgba(122, 29, 62, 0.1);
+  color: var(--maroon);
+}
+
+.actions .btn-edit:hover {
+  background: rgba(122, 29, 62, 0.22);
+  transform: translateY(-1px);
+}
+
+.actions .btn-delete {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
+.actions .btn-delete:hover {
+  background: rgba(220, 38, 38, 0.22);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+  .form-panel {
+    position: static;
+  }
+}
